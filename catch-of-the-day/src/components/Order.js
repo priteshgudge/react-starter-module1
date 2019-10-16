@@ -3,8 +3,9 @@ import React from 'react';
 class Order extends React.Component{
     render(){
         return(
-            <React.Fragment>
-            </React.Fragment>
+            <div className="order">
+                Order!!!
+            </div>
         )
     }
 }
