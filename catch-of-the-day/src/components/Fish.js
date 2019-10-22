@@ -3,7 +3,7 @@ import {formatPrice} from '../helpers'
 
 const fish = (props) => {
     const fish = props.details;
-
+    const isAvailable = fish.status === "available";
     return (
 
         <li className="menu-fish">
@@ -12,7 +12,7 @@ const fish = (props) => {
                 <span className="price">{formatPrice(fish.price)}</span>
             </h3>
             <p>{fish.desc}</p>
-            <button>Add to Cart</button>
+            <button disabled={!isAvailable}>{isAvailable?"Add to Cart":"Sold Out"}</button>
 
 
         </li>
