@@ -8,8 +8,8 @@ class App extends React.Component{
             <div className="catch-of-the-day">
 
                     <Header tagline="Fresh SeaFood Market"/>
-                    <Inventory/>
                     <Order/>
+                    <Inventory/>
 
             </div>);
     }
