@@ -12,7 +12,9 @@ const fish = (props) => {
                 <span className="price">{formatPrice(fish.price)}</span>
             </h3>
             <p>{fish.desc}</p>
-            <button disabled={!isAvailable}>{isAvailable?"Add to Cart":"Sold Out"}</button>
+            <button disabled={!isAvailable}
+            onClick={() => props.addToOrder(props.index)}
+            >{isAvailable?"Add to Cart":"Sold Out"}</button>
 
 
         </li>
