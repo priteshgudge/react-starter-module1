@@ -45,6 +45,15 @@ class App extends React.Component{
         this.setState({fishes:fishes})
     };
 
+    updateFish = (key, fish) => {
+        // 1. Take copy of the current state
+        const fishes = {...this.state.fishes};
+        // 2. Update the state with the fish
+        fishes[key] = fish;
+        // 3. Set the state back
+        this.setState({fishes: fishes});
+    }
+
     loadSampleFishes = () => {
         //alert("Loading Samples");
         this.setState({fishes: sampleFishes})
@@ -75,6 +84,7 @@ class App extends React.Component{
              </div>
             <Order fishes={this.state.fishes} order={this.state.order}/>
             <Inventory addFish={this.addFish}
+                       updateFish={this.updateFish}
                        loadSampleFishes={this.loadSampleFishes}
                         fishes={this.state.fishes}
             />
