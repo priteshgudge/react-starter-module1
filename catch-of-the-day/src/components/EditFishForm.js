@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class EditFishForm extends React.Component{
     handleChange = (event) =>{
@@ -10,6 +11,19 @@ class EditFishForm extends React.Component{
         // 2. Update the fish in the state
         this.props.updateFish(this.props.index, updatedFish);
 
+    };
+    static propTypes = {
+        fish: PropTypes.shape(
+            {
+                image: PropTypes.string.isRequired,
+                name: PropTypes.string.isRequired,
+                desc: PropTypes.string.isRequired,
+                status: PropTypes.string.isRequired,
+                price: PropTypes.number.isRequired
+            }),
+        index: PropTypes.string.isRequired,
+        updateFish: PropTypes.func.isRequired,
+        deleteFish: PropTypes.func.isRequired
     };
     render() {
         const fish = this.props.fish;

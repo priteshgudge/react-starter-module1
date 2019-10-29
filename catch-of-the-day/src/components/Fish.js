@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {formatPrice} from '../helpers'
+
 
 const fish = (props) => {
     const fish = props.details;
@@ -19,6 +21,19 @@ const fish = (props) => {
 
         </li>
     )
-}
+};
+
+fish.propTypes = {
+    details: PropTypes.shape(
+        {
+            image: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            desc: PropTypes.string.isRequired,
+            status: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired
+        }
+    ),
+    addToOrder: PropTypes.func.isRequired
+};
 
 export default fish;

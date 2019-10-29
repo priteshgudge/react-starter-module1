@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Header = (props) => (
            <React.Fragment>
@@ -16,8 +17,11 @@ const Header = (props) => (
                 </header>
 
            </React.Fragment>
-       )
+);
 
+Header.propTypes = {
+    tagline: PropTypes.string.isRequired
+};
 // class Header extends React.Component{
 //     render(){
 //        return(
