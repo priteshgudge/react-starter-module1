@@ -14,7 +14,7 @@ class EditFishForm extends React.Component{
     render() {
         const fish = this.props.fish;
         return (
-            <form className="fish-edit" onSubmit={this.createFish}>
+            <div className="fish-edit">
                 <input name="name" type="text"  placeholder="Name" onChange={this.handleChange} defaultValue={fish.name}/>
                 <input name="price"  type="text" onChange={this.handleChange} placeholder="Price" defaultValue={fish.price}/>
                 <select name="status"  placeholder="Status" onChange={this.handleChange} defaultValue={fish.status}>
@@ -23,8 +23,8 @@ class EditFishForm extends React.Component{
                 </select>
                 <textarea  name="description"   placeholder="Description" onChange={this.handleChange} defaultValue={fish.desc}/>
                 <input  name="image" type="text"  placeholder="Image" onChange={this.handleChange} defaultValue={fish.image}/>
-                <button name="submit" type="submit"> Submit </button>
-            </form>
+                <button onClick={() => this.props.deleteFish(this.props.index)}>Remove Fish</button>
+            </div>
         );
     }
 }
