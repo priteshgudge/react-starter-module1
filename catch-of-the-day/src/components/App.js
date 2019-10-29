@@ -57,9 +57,10 @@ class App extends React.Component{
         // 1. Take copy of the current state
         const fishes = {...this.state.fishes};
         // 2. Update the state with the fish
-        delete fishes[key];
+        // delete fishes[key]; Cannot do this due to firebase
+        fishes[key] = null;
         // 3. Set the state back
-        this.setState({fishes: fishes});
+        this.setState({fishes});
     };
 
     loadSampleFishes = () => {
